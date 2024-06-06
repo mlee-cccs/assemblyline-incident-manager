@@ -2,23 +2,20 @@
 This program is a standalone GUI built to interact with the Assemblyline Incident Manager (ALIM) scripts. 
 See: https://github.com/CybercentreCanada/assemblyline-incident-manager 
 
-The repo was cloned from the above link, and all new files are contained within the assemblyline_incident_manager/gui folder. 
+The repo was cloned from the above link, and all new files are contained within the /gui folder. 
 
-The gui/dist/ALIM folder contains everything needed to run the executable and connect to an Assemblyline instance with minimal user setup.
+The gui/dist/ALIM folder contains the executable to connect to an Assemblyline instance with minimal user setup. 
+It contains all python and pip packages used by the executable, without needing to install packages or python separately.
 - simply run the ALIM.exe
-
 NOTE: This application is mainly a proof-of-concept and likely contains bugs or other odd behaviour. If things aren't working as intended, try closing and restarting the application.
 
 ## Getting started
-The ALIM.py file is the main file to run the gui. The executable has been generated using pyinstaller on the ALIM.py which creates the build and dist folders. 
-
-The gui itself does not require the assemblyline_incident_manager files to run, it simply calls the scripts using a subprocess. 
-The ALIM.py file itself will be functional if the assemblyline incident manager has been pip installed 
+The ALIM.py file is the main file to run the gui. It does not require the assemblyline_incident_manager files to run, it will be functional if the assemblyline-incident-manager has been pip installed. 
 
 To compile the application from the ALIM.py file into a .exe, I used pyinstaller. The resulting exe will be in the dist folder. 
 NOTE: You may need to move the crane.png to be in the same folder as the exe, or change the file path in the ALIM.py file.
 ```
-pyinstaller ALIM.py --hideconsole --collect-data TKinterModernThemes
+pyinstaller ALIM.py --hide-console hide-early --collect-data TKinterModernThemes
 ```
 
 ## Required Files
